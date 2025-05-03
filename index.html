@@ -7,6 +7,10 @@
   <link rel="icon" href="image.png" type="image/icon type">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: 'Orbitron', sans-serif;
@@ -19,7 +23,6 @@
     header {
       text-align: center;
       padding: 2rem 1rem;
-      font-size: 2.5rem;
       background: #000000a0;
       backdrop-filter: blur(6px);
       animation: fadeInDown 1.5s ease-out;
@@ -29,6 +32,12 @@
       font-size: 2.5rem;
       color: cyan;
       margin: 0.5rem 0;
+    }
+
+    header img {
+      width: 100px;
+      height: auto;
+      margin-bottom: 1rem;
     }
 
     #outlook {
@@ -66,6 +75,7 @@
       margin-top: 3rem;
     }
 
+    /* Animation */
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-40px); }
       to { opacity: 1; transform: translateY(0); }
@@ -81,14 +91,18 @@
       50% { box-shadow: 0 0 50px rgba(0, 255, 255, 0.6); }
     }
 
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-
+    /* Mobile adjustments */
     @media (max-width: 600px) {
       header h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+      }
+
+      header {
+        padding: 1.2rem 1rem;
+      }
+
+      iframe {
+        height: 240px;
       }
 
       .section h2 {
@@ -98,16 +112,12 @@
       .section p {
         font-size: 1rem;
       }
-
-      iframe {
-        height: 250px;
-      }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="image.png" alt="Logo" style="width: 100px; height: auto; margin-bottom: 1rem;" />
+    <img src="image.png" alt="Logo" />
     <h1>Generational Weather</h1>
     <p>Tracking UK weather as it happens.</p>
   </header>
