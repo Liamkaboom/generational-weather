@@ -21,7 +21,7 @@
       overflow-x: hidden;
     }
 
-    /* Loading Screen Styles */
+    /* Loading Styles */
     #loader {
       position: fixed;
       z-index: 9999;
@@ -49,6 +49,16 @@
       animation: fadeGlow 2s infinite ease-in-out;
     }
 
+    #loader .spinner {
+      margin-top: 1rem;
+      border: 6px solid #ddd;
+      border-top: 6px solid cyan;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1.5s linear infinite;
+    }
+
     @keyframes rotateSpin {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
@@ -61,6 +71,11 @@
     @keyframes fadeGlow {
       0%, 100% { opacity: 0.4; }
       50% { opacity: 1; }
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
 
     header {
@@ -203,9 +218,10 @@
   <div id="loader">
     <img src="image.png" alt="Loading..." />
     <p>Loading...</p>
+    <div class="spinner"></div>
   </div>
 
-  <!-- Main Stuff -->
+  <!-- Main content -->
   <header>
     <img src="image.png" alt="Logo" />
     <h1>Generational Weather</h1>
